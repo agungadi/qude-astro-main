@@ -1,0 +1,79 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Starter Plan",
+    price: "1.000.000, IDR",
+    popular: false,
+    features: [
+      "Account Verification",
+      "WhatsApp Green Tick Badge Support*",
+      "Masking WhatsApp account",
+      "WhatsApp broadcast message",
+      "Personalize Messages",
+      "1000 WhatsApp Conversation Credit",
+      "1.000 MAU"
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Business Plan",
+    price: "1.900.000, IDR",
+    popular: true,
+    features: [
+    "Account Verification",
+      "WhatsApp Green Tick Badge Support*",
+      "Masking WhatsApp account",
+      "WhatsApp broadcast message",
+      "Personalize Messages",
+      "1000 WhatsApp Conversation Credit",
+      "2.000 MAU"
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    popular: false,
+    features: [
+    "Account Verification",
+      "WhatsApp Green Tick Badge Support*",
+      "Masking WhatsApp account",
+      "WhatsApp broadcast message",
+      "Personalize Messages",
+      "1000 WhatsApp Conversation Credit",
+      "Custom++ MAU",
+
+    ],
+    button: {
+      text: "Contact us",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="desc">
+        Simple & Predictable pricing. No Surprises.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>

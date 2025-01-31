@@ -1,0 +1,51 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+ 
+  {
+    title: "Interactive Communication (Flexible Chatbot Solution)",
+    description:
+      "Explore Our Advanced Chatbot Menu. Minimize customer delays! Simplify service access on WhatsApp for faster support and seamless interactions.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Broadcast Message",
+    description:
+      "Our Broadcast Message service offers marketing tools to enhance brand awareness and sales, utility services for user follow-ups, and authentication services to verify accounts and ensure security, streamlining operations and improving user experience",
+    icon: "bx:bxs-message-alt-error",
+  },
+  {
+    title: "Helpdesk Ticketing System",
+    description:
+      "Are you ready to revolutionize your customer support experience? Introducing our cutting-edge Helpdesk Ticketing System powered by WhatsApp Cloud API, the ultimate solution for modern businesses striving to provide seamless and efficient customer service.",
+    icon: "bx:bxs-user",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Everything you need to start a business.
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    WhatsApp Business offers essential tools for businesses to engage with customers effectively. Create a professional profile, send quick replies, automate greetings, and organize chats efficiently. Gain insights with analytics and expand reach with API integration. Elevate your customer experience and drive growth with WhatsApp Business Platform..
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
