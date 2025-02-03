@@ -6,6 +6,11 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://midnusa.com",
   integrations: [tailwind(), mdx(), sitemap(), icon()],
+  server: {
+    host: "0.0.0.0",
+    port: 3002
+  },
+  output: 'static',
 });
